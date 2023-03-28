@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({Key? key}) : super(key: key);
+  final String title;
+  const NoteItem({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class NoteItem extends StatelessWidget {
         children: [
           Container(
             width: MediaQuery.of(context).size.width - 90,
-            child: Text("How to draw a professional wireframe ?",
+            child: Text(title,
                 style: TextStyle(color: Colors.black, fontSize: 25, fontFamily: 'ceraBold')),
           ),
           SizedBox(height: 15,),

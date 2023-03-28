@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatelessWidget{
+  final List<String> titleList = ["How to draw a professional wireframe ?", "How to draw a professional template ?", "How to draw a professional webpage ?"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,20 +18,12 @@ class HomePage extends StatelessWidget{
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         padding: EdgeInsets.symmetric(horizontal: 25, vertical: 40),
-        child: ListView(
-          children: [
-            NoteItem(),
-            NoteItem(),
-            NoteItem(),
-            NoteItem(),
-            NoteItem(),
-            NoteItem(),
-            NoteItem(),
-            NoteItem(),
-            NoteItem(),
-            NoteItem(),
-          ],
-        ),
+        child: ListView.builder(
+          itemCount: this.titleList.length,
+          itemBuilder: (context, i){
+            return NoteItem(title: this.titleList[i],);
+          },
+        )
 
       ),
     );
