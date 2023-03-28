@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({Key? key}) : super(key: key);
+  final String title;
+  const DetailPage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class DetailPage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              child: Text("How to draw a professional wireframe ?",
+              child: Text(title,
                   style: TextStyle(color: Colors.black, fontSize: 25, fontFamily: 'ceraBold')),
             ),
             SizedBox(height: 10,),
