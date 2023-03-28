@@ -4,13 +4,14 @@ import '../../detail/detail_page.dart';
 
 class NoteItem extends StatelessWidget {
   final String title;
-  const NoteItem({Key? key, required this.title}) : super(key: key);
+  final String desc;
+  const NoteItem({Key? key, required this.title, required this.desc}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(title: title,)));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(title: title, desc: desc)));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -32,7 +33,7 @@ class NoteItem extends StatelessWidget {
             SizedBox(height: 15,),
             Container(
               width: MediaQuery.of(context).size.width - 90,
-              child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              child: Text(desc,
                 style: TextStyle(color: Colors.black.withOpacity(0.8), fontSize: 15,), textAlign: TextAlign.start,),
             ),
             SizedBox(height: 25,),

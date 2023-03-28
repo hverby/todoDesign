@@ -3,7 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DetailPage extends StatelessWidget {
   final String title;
-  const DetailPage({Key? key, required this.title}) : super(key: key);
+  final String desc;
+  const DetailPage({Key? key, required this.title, required this.desc}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +27,7 @@ class DetailPage extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 25, vertical: 40),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               child: Text(title,
@@ -33,7 +35,7 @@ class DetailPage extends StatelessWidget {
             ),
             SizedBox(height: 10,),
             Container(
-              child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              child: Text(desc,
                 style: TextStyle(color: Colors.black.withOpacity(0.8), fontSize: 15,), textAlign: TextAlign.start,),
             ),
           ],
