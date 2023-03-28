@@ -4,7 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class DetailPage extends StatelessWidget {
   final String title;
   final String desc;
-  const DetailPage({Key? key, required this.title, required this.desc}) : super(key: key);
+  final IconData icon;
+  const DetailPage({Key? key, required this.title, required this.desc, required this.icon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +39,7 @@ class DetailPage extends StatelessWidget {
               child: Text(desc,
                 style: TextStyle(color: Colors.black.withOpacity(0.8), fontSize: 15,), textAlign: TextAlign.start,),
             ),
+            Icon(icon)
           ],
         ),
       )
