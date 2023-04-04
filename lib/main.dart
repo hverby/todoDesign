@@ -21,4 +21,18 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
     );
   }
+
+  ThemeData chooseTheme(bool b){
+    if(b){
+      return ThemeData(
+        fontFamily: 'ceraRegular',
+        primarySwatch: Colors.blue,
+      );
+    }else{
+      return ThemeData(
+        fontFamily: 'ceraRegular',
+        primarySwatch: Colors.blue,
+      );
+    }
+  }
 }
