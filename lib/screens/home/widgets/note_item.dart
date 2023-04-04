@@ -1,3 +1,4 @@
+import 'package:course/screens/home/class/Note.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -7,10 +8,10 @@ class NoteItem extends StatefulWidget {
   final String title;
   final String desc;
   final IconData icon;
+  final double price;
   final int index;
   final Function f;
-  final bool isSelected;
-  const NoteItem({Key? key, required this.title, required this.desc, required this.icon, required this.index, required this.f, required this.isSelected}) : super(key: key);
+  const NoteItem({Key? key, required this.title, required this.desc, required this.icon,  required this.price, required this.index, required this.f}) : super(key: key);
 
   @override
   State<NoteItem> createState() => _NoteItemState();
@@ -18,13 +19,18 @@ class NoteItem extends StatefulWidget {
 
 class _NoteItemState extends State<NoteItem> {
   bool _isSelected = false;
+  bool _isSelected1 = false;
 
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
+        //widget.f(Note(title: widget.title, desc: widget.desc, price: widget.price, icon: widget.icon));
         widget.f(widget.index);
+        setState(() {
+          _isSelected1 = !_isSelected1;
+        });
       },
       onDoubleTap: (){
         Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(title: widget.title, desc: widget.desc, icon: widget.icon)));
@@ -37,7 +43,7 @@ class _NoteItemState extends State<NoteItem> {
         //height: 200,
         decoration: BoxDecoration(
             color: Colors.blue.withOpacity(0.08),
-            border: Border.all(color: widget.isSelected ? Colors.green.withOpacity(0.4) : Colors.black, width: 1),
+            border: Border.all(color: _isSelected1 ? Colors.green.withOpacity(0.4) : Colors.black, width: 1),
             borderRadius: BorderRadius.all(Radius.circular(20))
         ),
         child: Column(
