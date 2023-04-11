@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../home/class/Note.dart';
+
 class DetailPage extends StatelessWidget {
-  final String title;
-  final String desc;
-  final IconData icon;
-  const DetailPage({Key? key, required this.title, required this.desc, required this.icon}) : super(key: key);
+  static const routeName = '/zofzeiufhe';
+  const DetailPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Note args = ModalRoute.of(context)!.settings.arguments as Note;
+    //final Object? args = ModalRoute.of(context)?.settings.arguments;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -31,18 +34,19 @@ class DetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              child: Text(title,
+              child: Text(args.title,
                   style: TextStyle(color: Colors.black, fontSize: 25, fontFamily: 'ceraBold')),
             ),
             SizedBox(height: 10,),
             Container(
-              child: Text(desc,
+              child: Text(args.desc,
                 style: TextStyle(color: Colors.black.withOpacity(0.8), fontSize: 15,), textAlign: TextAlign.start,),
             ),
-            Icon(icon)
+            Icon(args.icon)
           ],
         ),
       )
     );
   }
+
 }

@@ -36,7 +36,8 @@ class _NoteItemState extends State<NoteItem> {
       onDoubleTap: (){
        // Navigator.push(context,
            // MaterialPageRoute(builder: (context) => DetailPage(title: widget.title, desc: widget.desc, icon: widget.icon)));
-        Navigator.pushNamed(context, CartPage.routeName);
+        Navigator.pushNamed(context, DetailPage.routeName,
+            arguments: Note(title: widget.title, desc: widget.desc, icon: widget.icon, price: widget.price));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CartPage extends StatelessWidget {
-  static const routeName = '/zhcbzejhczuh';
+  static const routeName = '/cart';
   const CartPage({Key? key}) : super(key: key);
 
   @override
