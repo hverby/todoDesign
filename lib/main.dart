@@ -1,5 +1,7 @@
+import 'package:course/screens/cart/cartPage.dart';
 import 'package:course/screens/home/class/Note.dart';
 import 'package:course/screens/home/home_page.dart';
+import 'package:course/screens/home/widgets/note_item.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,11 +16,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        //'/detail': (context) => NoteItem(),
+        CartPage.routeName: (context) => CartPage(),
+      },
       theme: ThemeData(
         fontFamily: 'ceraRegular',
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      //home: HomePage(),
     );
   }
 

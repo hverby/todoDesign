@@ -1,3 +1,4 @@
+import 'package:course/screens/cart/cartPage.dart';
 import 'package:course/screens/home/class/Note.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -33,8 +34,9 @@ class _NoteItemState extends State<NoteItem> {
         });
       },
       onDoubleTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(title: widget.title, desc: widget.desc, icon: widget.icon)));
-
+       // Navigator.push(context,
+           // MaterialPageRoute(builder: (context) => DetailPage(title: widget.title, desc: widget.desc, icon: widget.icon)));
+        Navigator.pushNamed(context, CartPage.routeName);
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
